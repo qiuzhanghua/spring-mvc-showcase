@@ -16,6 +16,8 @@ import org.springframework.samples.mvc.convert.MaskFormat;
 
 public class FormBean {
 	
+	private Gender gender;
+	
 	@NotEmpty
 	private String name;
 	
@@ -123,6 +125,15 @@ public class FormBean {
 		this.additionalInfo = additionalInfo;
 	}
 
+	
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
 	public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("properties name=");
@@ -131,6 +142,7 @@ public class FormBean {
         } else {
         	sb.append(name).append(", ");
         }
+        sb.append("gender=").append(gender).append(", ");
         sb.append("age=").append(age).append(", ");
         sb.append("birthDate=").append(birthDate).append(", ");
         sb.append("phone=");
